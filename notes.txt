@@ -1,0 +1,18 @@
+Scénario du cas créer un instrument
+créer un kit
+supprimer un kit
+ajouter un cycle de stérilisation
+créer un équipement de stérilisation
+supprimer un équipement de stérilisation
+créer une stérilisation
+supprimer une stérilisation
+créer un conditionnement
+supprimer un conditionnement
+crée une livraison
+supprimer une livraison
+créer un scan
+supprimer un scan
+créer un retour
+supprimer un retour
+modifier un instrument
+modifier un kit
