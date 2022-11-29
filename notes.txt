@@ -16,3 +16,9 @@ créer un retour
 supprimer un retour
 modifier un instrument
 modifier un kit
+modifier un équipement de stérilisation
+modifier une stérilisation
+supprimer un conditionnement
+-------------------------------
+modifier une assurance
+modifier une convention
