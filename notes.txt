@@ -20,6 +20,7 @@ modifier un équipement de stérilisation
 modifier une stérilisation
 supprimer un conditionnement
 modifier un conditionnement
+modifier une livraison
 -------------------------------
 modifier une assurance
 modifier une convention
