@@ -21,6 +21,9 @@ modifier une stérilisation
 supprimer un conditionnement
 modifier un conditionnement
 modifier une livraison
+supprimer un scan
+modifier un scan
+modifier un retour
 -------------------------------
 modifier une assurance
 modifier une convention
