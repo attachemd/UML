@@ -1,0 +1,29 @@
+@startuml
+
+actor User
+
+participant "Email Client" as EC
+participant "Email Server" as ES
+participant "Recipient's Email Server" as RES
+participant "Recipient's Email Client" as REC
+
+User -> EC: Compose new email
+EC -> ES: Connect to server
+ES --> EC: 220 Welcome
+EC -> ES: EHLO example.com
+ES --> EC: 250 OK
+EC -> ES: MAIL FROM: <sender@example.com>
+ES --> EC: 250 OK
+EC -> ES: RCPT TO: <recipient@example.com>
+ES --> EC: 250 OK
+EC -> ES: DATA
+ES --> EC: 354 End data with <CR><LF>.<CR><LF>
+EC -> ES: Subject: Test Email
+EC -> ES: 
+EC -> ES: This is a test email.
+EC -> ES: .
+ES --> EC: 250 OK
+ES -> RES: Deliver email
+RES -> REC: Download email
+
+@enduml
