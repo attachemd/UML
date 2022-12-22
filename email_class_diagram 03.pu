@@ -1,0 +1,57 @@
+@startuml
+
+class Email {
+  -to: string
+  -cc: string
+  -bcc: string
+  -from: string
+  -subject: string
+  -body: string
+  +attachments: list<Attachment>
+  +isSent: boolean
+  +isRead: boolean
+  +send(): void
+  +addAttachment(attachment: Attachment): void
+}
+
+class EmailModel {
+  -name: string
+  -category: EmailModelCategory
+  -to: string
+  -cc: string
+  -bcc: string
+  -subject: string
+  -body: string
+  +attachments: list<Attachment>
+}
+
+class EmailModelCategory {
+  -name: string
+  +models: list<EmailModel>
+  +getModels(): list<EmailModel>
+}
+
+class AddressBook {
+  +contacts: list<EmailAddress>
+  +getEmailAddresses(): list<string>
+}
+
+class Attachment {
+  -name: string
+  -data: string
+  +getName(): string
+  +getData(): string
+}
+
+class Mailbox {
+  -name: string
+  +emails: list<Email>
+  +getEmails(): list<Email>
+  +addEmail(email: Email): void
+}
+
+EmailModelCategory "1" -- "*" EmailModel : contains
+Email "1" -- "*" Attachment : has
+Email "1" -- "1" Mailbox : is stored in
+
+@enduml

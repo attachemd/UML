@@ -1,0 +1,74 @@
+@startuml
+
+class User {
+  - username: String
+  - password: String
+}
+
+class EmailClient {
+  + host: String
+  + port: Integer
+  + username: String
+  + password: String
+  + compose(to: List[EmailAddress], subject: String, body: String, cc: List[EmailAddress], bcc: List[EmailAddress], attachments: List[Attachment]): Email
+  + send(email: Email): void
+}
+
+class EmailServer {
+  + host: String
+  + port: Integer
+  + receive(email: Email): void
+  + send(email: Email): void
+}
+
+class RecipientEmailServer {
+  + host: String
+  + port: Integer
+  + receive(email: Email): void
+  + send(email: Email): void
+}
+
+class RecipientEmailClient {
+  + host: String
+  + port: Integer
+  + username: String
+  + password: String
+  + download(email: Email): void
+}
+
+class Email {
+  + to: List[EmailAddress]
+  + from: EmailAddress
+  + subject: String
+  + body: String
+  + cc: List[EmailAddress]
+  + bcc: List[EmailAddress]
+  + attachments: List[Attachment]
+  + sender: User
+}
+
+class EmailAddress {
+  + name: String
+  + address: String
+}
+
+class Attachment {
+  + name: String
+  + size: Integer
+  + type: String
+  + encoding: String
+  + data: Binary
+}
+
+User "1" -- "1" EmailClient
+EmailClient "1" -- "1" EmailServer
+EmailServer "1" -- "1" RecipientEmailServer
+RecipientEmailServer "1" -- "1" RecipientEmailClient
+User "1" -- "*" Email
+Email "1" -- "1" EmailAddress : from
+Email "1" -- "*" EmailAddress : to
+Email "0..1" -- "*" EmailAddress : cc
+Email "0..1" -- "*" EmailAddress : bcc
+Email "0..1" -- "*" Attachment
+
+@enduml

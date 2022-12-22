@@ -1,0 +1,11 @@
+@startuml
+
+actor User
+
+User -> EmailClient : Compose and send email
+EmailClient -> EmailServer : Send email
+EmailServer -> RecipientEmailServer : Forward email
+RecipientEmailServer -> RecipientEmailClient : Deliver email
+RecipientEmailClient -> User : Download email
+
+@enduml
