@@ -1,0 +1,17 @@
+@startuml
+
+start
+
+:Enter patient information into system;
+
+:Determine treatment plan;
+
+:Track patient treatment;
+
+:Share patient information with other healthcare providers;
+
+:Discharge patient;
+
+stop
+
+@enduml

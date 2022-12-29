@@ -1,0 +1,28 @@
+@startuml
+
+start
+
+:Enter patient information into system;
+
+:Assess patient's condition and determine triage level;
+
+:Provide necessary medical treatment;
+
+:Transfer patient to hospital unit;
+
+:Determine cause of life-threatening condition;
+
+:Determine if surgery is necessary;
+
+if (surgery is necessary) then
+  :Schedule and prepare for surgery;
+  :Perform surgery;
+end
+
+:Track patient's progress and provide ongoing treatment;
+
+:Discharge patient;
+
+stop
+
+@enduml

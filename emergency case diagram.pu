@@ -1,0 +1,20 @@
+@startuml
+
+actor "Healthcare Provider" as HP
+
+HP -> : Arrives at hospital with emergency
+HP -> : Assess patient's condition and determine triage level
+HP -> : Provide necessary medical treatment
+HP -> : Transfer patient to hospital unit
+HP -> : Determine cause of emergency condition
+HP -> : Determine if surgery is necessary
+
+
+  HP -> : Schedule and prepare for surgery
+  HP -> : Perform surgery
+
+
+HP -> : Track patient's progress and provide ongoing treatment
+HP -> : Discharge patient from hospital
+
+@enduml
