@@ -1,0 +1,8 @@
+@startuml
+equipment *-- "1..*" cycle
+
+kit --> "1" cycle
+
+kit --> "1" equipment
+
+@enduml
